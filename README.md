@@ -1,2 +1,2 @@
 # linux-setup
-# varioud scripts and config files to get a ubuntu started
+# various scripts and config files for a base Ubuntu dev system
