@@ -1,0 +1,36 @@
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    COLOR="--color=auto"
+else
+    COLOR=""
+fi
+
+alias {cl,cls}="clear"
+
+alias dir="dir -F ${COLOR}"
+alias vdir="vdir -F ${COLOR}"
+
+alias ls="ls -F ${COLOR}"
+alias l="ls"
+alias la="ls -A"
+alias ll="ls -l"
+alias {lla,lal}="ls -Al"
+
+alias h{,i,is,ist}="history"
+alias h{o,off}="set +o history"
+
+alias grep="grep ${COLOR}"
+alias fgrep="fgrep ${COLOR}"
+alias egrep="egrep ${COLOR}"
+
+
+alias vi="/usr/bin/vim"
+
+#Easy Vim mode !
+alias vimy="/usr/bin/vim -y"
+
+#sqlite with uparrow
+alias sqlite3="rlwrap -c sqlite3"
