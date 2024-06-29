@@ -4,7 +4,7 @@
 OPT_DIR="$HOME/opt"
 
 ##### installing lazygit
-LAXYGIT_VERSION="0.42.0"
+LAZYGIT_VERSION="0.42.0"
 LAZYGIT_X86="lazygit_$(LAZYGIT_VERSION)_Linux_x86_64"
 LAZYGIT_TAR_DOWNLOAD_LINK="https://github.com/jesseduffield/lazygit/releases/download/v$LAZYGIT_VERSION/$LAZYGIT_X86.tar.gz"
 LAZYGIT_X86_FOLDER="$OPT_DIR/lazygit/$LAZYGIT_X86"

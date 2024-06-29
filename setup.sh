@@ -11,7 +11,5 @@ sudo apt-get install vim
 OPT_DIR="$HOME /opt"
 ### create opt directory
 mkdir -p $OPT_DIR
-mkdir -p $OPT_DIR/nodejs
-mkdir -p $OPT_DIR/flutter
 
-   
+
