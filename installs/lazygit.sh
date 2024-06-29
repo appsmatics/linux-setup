@@ -2,17 +2,17 @@
 ##### Download the required version from https://github.com/jesseduffield/lazygit/releases
 
 ##### installing lazygit
-LAZYGIT_TAR_DOWNLOAD_LINK="https://github.com/jesseduffield/lazygit/releases/download/v0.42.0/lazygit_0.42.0_Linux_x86_64.tar.gz"
-LAZYGIT_VERSION="lazygit_0.42.0_Linux_x86_64"
-if [[ -d "$HOME/opt/lazygit/$LAZYGIT_VERSION" ]]
+LAXYGIT_VERSION="0.42.0"
+LAZYGIT_X86="lazygit_$(LAZYGIT_VERSION)_Linux_x86_64"
+LAZYGIT_TAR_DOWNLOAD_LINK="https://github.com/jesseduffield/lazygit/releases/download/v$LAZYGIT_VERSION/$LAZYGIT_X86.tar.gz"
+if [[ -d "$HOME/opt/lazygit/$LAZYGIT_X86" ]]
 then
-  echo "lazygit $LAZYGIT_VERSION already available .. skipping"
+  echo "lazygit v$LAZYGIT_VERSION already available .. skipping"
 else
-  echo "installing lazygit $LAZYGIT_VERSION"
-  mkdir -p "$HOME/opt/lazygit/$LAZYGIT_VERSION"
-  mkdir -p $HOME/opt/lazygit/lazygit_0.42.0_Linux_x86_64
-  mv $HOME/Downloads/lazygit_0.42.0_Linux_x86_64.tar.gz $HOME/opt/lazygit/lazygit_0.42.0_Linux_x86_64
-  cd $HOME/opt/lazygit/lazygit_0.42.0_Linux_x86_64
-  tar -xf lazygit_0.42.0_Linux_x86_64.tar.gz
-  ln -s lazygit_0.42.0_Linux_x86_64 current
+  echo "installing lazygit v$LAZYGIT_VERSION"
+  mkdir -p "$HOME/opt/lazygit/$LAZYGIT_X86"
+  #mkdir -p $HOME/opt/lazygit/lazygit_0.42.0_Linux_x86_64
+  mv "$HOME/Downloads/$LAZYGIT_X86.tar.gz" "$HOME/opt/lazygit/$LAZYGIT_X86"
+  cd "$HOME/opt/lazygit/$LAZYGIT_X86"
+  tar -xf "$LAZYGIT_X86.tar.gz"
 fi
