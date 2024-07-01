@@ -1,9 +1,29 @@
 ### flutter setup:
 ##### download flutter latest version tar file from flutter page (https://storage.googleapis.com/   flutter_infra_release/releases/stable/linux/flutter_linux_3.22.2-stable.tar.xz)
-mv $HOME/Downloads/flutter_linux_3.22.2-stable.tar.xz $OPT_DIR/flutter
-cd $OPT_DIR/flutter
-tar -xf flutter_linux_3.22.2-stable.tar.xz
-ln -s flutter_linux_3.22.2-stable current
+
+##### installing flutter
+OPT_DIR="$HOME/opt"
+FLUTTER_VERSION="3.22.2"
+FLUTTER_FOLDER="$OPT_DIR/flutter"
+FLUTTER_TAR_DOWNLOAD_LINK="https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz"
+
+
+if [[ -d "$FLUTTER_FOLDER" ]]
+then
+  echo "flutter $FLUTTER_VERSION already available .. skipping"
+else
+  curl -LO  $FLUTTER_TAR_DOWNLOAD_LINK
+  echo "installing flutter $FLUTTER_VERSION"
+  mkdir  -p "$FLUTTER_FOLDER"
+  mv $HOME/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz $FLUTTER_FOLDER
+  cd $FLUTTER_FOLDER
+  tar -xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz
+  if [[ -d "current" ]]
+  then
+  rm current
+  fi
+  ln -s flutter current
+fi
 
   
 ### android sdk setup: 
