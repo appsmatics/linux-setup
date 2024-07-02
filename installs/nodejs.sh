@@ -10,7 +10,7 @@ NODEJS_TAR_DOWNLOAD_LINK=https://nodejs.org/dist/v${NODEJS_VERSION}/node-v${NODE
 
 if [[ -d "$NODEJS_FOLDER" ]]
 then
-  echo ".. lazygit version $NODEJS_VERSION already exists"
+  echo ".. nodejs version $NODEJS_VERSION already exists"
 else
  mkdir -p $NODEJS_DIR
  cd $NODEJS_DIR
@@ -27,5 +27,5 @@ then
   rm current
 fi
 ln -s node-v${NODEJS_VERSION}-linux-x64 current
-echo ".. lazygit $NODEJS_VERSION  .. current symlink updated"
+echo ".. nodejs $NODEJS_VERSION  .. current symlink updated"
 
