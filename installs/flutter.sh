@@ -25,22 +25,30 @@ else
   ln -s flutter current
 fi
 
+
+
   
 ### android sdk setup: 
-mkdir -p $OPT_DIR/android/sdk
+mkdir -p $OPT_DIR/android/sdk/platform-tools
+cd $OPT_DIR/android/sdk/platform-tools
+
+PLATFORM_TOOLS_VERSION="34.0.1"
+
+#LAZYGIT_X86="lazygit_${LAZYGIT_VERSION}_Linux_x86_64"
+PLATFORM_TOOLS_DOWNLOAD_LINK="https://dl.google.com/android/repository/platform-tools_r${PLATFORM_TOOLS_VERSION}-linux.zip"
 
 #### download the platfom tools from 
-mv $HOME/Downloads/platform-tools-latest-linux.zip $OPT_DIR/android/sdk
-cd $OPT_DIR/android/sdk
-unzip platform-tools-latest-linux.zip
+curl -LO $PLATFORM_TOOLS_DOWNLOAD_LINK
+#mv $HOME/Downloads/platform-tools-latest-linux.zip $OPT_DIR/android/sdk
+unzip platform-tools_r${PLATFORM_TOOLS_VERSION}-linux.zip && mv platform-tools platform-tools-${PLATFORM-TOOLS-VERSION}
 
 #### use appropriate version
-mv platform-tools platform_tools_x.y.z
-ln -s platform-tools_x.y.z current
+#mv platform-tools platform_tools_x.y.z
+ln -s platform-tools_${PLATFORM_TOOLS_VERSION} current
 
 flutter doctor
   
-  
+ << com 
 ### android sdk not located error started:
   
 flutter config --android-sdk /home/ajith/opt/android/sdk/current
@@ -56,7 +64,7 @@ ln -s platform_tools_35.0.1
 ln -s platform_tools_35.0.1 current
   
 ### android tools download:
-wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
+curl https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
 ls
 unzip tools_r25.2.3-linux.zip
 cd
@@ -105,9 +113,9 @@ sdkmanager --licenses
   sdk/cmdline-tools/bin  changed to sdk/cmdline-tools/latest/bin
     cmdline-tools/
 https://stackoverflow.com/questions/70719767/android-sdkmanager-not-found-update-to-the-latest-android-sdk-and-ensure-that-t (answer by divillysausages)
-
 ### important: setting env path for android setup
   # android sdk version path
 export PATH="$OPT_DIR/android/sdk/current/bin:$PATH"
 export PATH="$OPT_DIR/android/sdk/platform-tools/bin:$PATH"
 export PATH="$OPT_DIR/android/sdk/cmdline-tools/latest/bin/:$PATH"
+com
