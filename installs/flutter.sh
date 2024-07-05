@@ -20,12 +20,13 @@ else
   #curl -LO  $FLUTTER_TAR_DOWNLOAD_LINK
   echo "installing flutter $FLUTTER_VERSION"
   echo "untaring the file started..."
+  echo "extracting flutter-${FLUTTER_VERSION} tar file..."
   tar -xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz
   mv flutter $FLUTTER_VERSION_FOLDER
 fi
 
 # Always update the current symlink
-echo ".. resettting current symlink"
+echo ".. resetting current symlink"
 cd "$FLUTTER_FOLDER"
 if [[ -d "current" ]]
 then
@@ -51,8 +52,10 @@ if [[ -a "platform-tools_r${PLATFORM_TOOLS_VERSION}-linux.zip" ]]
 then
   echo "platrform-tools version $PLATFORM_TOOLS_VERSION already exists..skipping"
 else
+echo "downloading platform-tools-${PLATFORM_TOOLS_VERSION}.."
 curl -LO $PLATFORM_TOOLS_DOWNLOAD_LINK
 fi
+echo "unzipping platform-tools_r${PLATFORM_TOOLS_VERSION} tar file..."
 unzip  platform-tools_r${PLATFORM_TOOLS_VERSION}-linux.zip
 #mv platform-tools platform-tools-${PLATFORM_TOOLS_VERSION}
 #### use appropriate version
@@ -73,24 +76,13 @@ then
   echo "tools version $TOOLS_VERSION already exists..skipping"
 else
 #curl https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
+echo "downloading tools-${TOOLS_VERSION}..."
 curl -LO $TOOLS_DOWNLOAD_LINK
 fi
+echo "unzipping tools-${TOOLS_VERSION}..."
 unzip  tools_r${TOOLS_VERSION}-linux.zip
 ln -s tools current
-
-
-### jdk not found error fix:
-sudo add-apt-repository ppa:openjdk-r/ppa
-sudo apt-get update
-sudo apt-get install openjdk-8-jdk
-
-
-
-### continuing android sdk location error fix,cmdline-tools missing:  
-cd opt/android/sdk/tools/bin
-sdkmanager --install "cmdline-tools;latest"
-flutter doctor
-  
+echo "tools-${TOOLS_VERSION}  .. current symlink updated"
 
 
 ### commandlinetools download and installation:(cmdline-tools component is missing fix)
@@ -104,6 +96,7 @@ then
 else
 curl -LO "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip"
 fi
+echo "unzipping the commandline tools..."
 unzip  commandlinetools-linux-11076708_latest.zip 
 cd cmdline-tools/
 mkdir latest 
@@ -111,6 +104,7 @@ mv -i * latest
 echo "command line tools are ready..."
 
 ### java version missing error:
+echo "installing the java version..."
 apt install openjdk-17-jdk openjdk-17-jre
 sudo apt install openjdk-17-jdk openjdk-17-jre
 
