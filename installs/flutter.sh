@@ -106,42 +106,34 @@ curl -LO "https://dl.google.com/android/repository/commandlinetools-linux-110767
 fi
 unzip  commandlinetools-linux-11076708_latest.zip 
 cd cmdline-tools/
-mkdir tools 
-mv -i * tools
-cho "command line tools are ready..."
-
-
-### required sdk tools installation command:
-echo "installing required sdk tools.."
-flutter config --android-sdk="$OPT_DIR/android/sdk"
-cd opt/android/sdk/cmdline-tools/tools/bin
-sdkmanager "platforms;android-30" "build-tools; 29.0.3"
-sdkmanager --licenses -y
-echo "sdk tools(platforms;android-30" "build-tools; 29.0.3) installed.."
-
-
+mkdir latest 
+mv -i * latest
+echo "command line tools are ready..."
 
 ### java version missing error:
 apt install openjdk-17-jdk openjdk-17-jre
 sudo apt install openjdk-17-jdk openjdk-17-jre
 
+flutter config --android-sdk="$OPT_DIR/android/sdk"
 flutter doctor -v
-  
- << com   
-### Connected device (the doctorcheck is crashed):
-Downgraded the platform-tools version from 35.0.1 to 34.0.0
-Unable to run "adb", check your Android SDK installation and ANDROID_HOME environment variable: /home/ajith/opt/android/sdk/platform-tools/adb
-https://github.com/flutter/flutter/issues/142996 (rudentsov answer)474  flutter doctor --android-licenses
 
-### android license status unknown fix
-cd opt/android/sdk/tools/bin
-sdkmanager --licenses
-  sdk/cmdline-tools/bin  changed to sdk/cmdline-tools/latest/bin
-    cmdline-tools/
-https://stackoverflow.com/questions/70719767/android-sdkmanager-not-found-update-to-the-latest-android-sdk-and-ensure-that-t (answer by divillysausages)
+
+#after we need to do these step manually
+### required sdk tools installation command:
+echo "after we need to do these step manually to install required sdk tools"
+echo "cd opt/android/sdk/cmdline-tools/latest/bin"
+echo "sdkmanager --list"
+echo "find the available platforms and build-tools version above"
+echo 'sdkmanager "platforms;version" "build-tools;version"'
+echo 'ex: sdkmanager "platforms;android-30" "build-tools;30.0.0"'
+echo "sdkmanager --licenses"
+
+
+  
+ 
+
 ### important: setting env path for android setup
-  # android sdk version path
-export PATH="$OPT_DIR/android/sdk/current/bin:$PATH"
-export PATH="$OPT_DIR/android/sdk/platform-tools/bin:$PATH"
-export PATH="$OPT_DIR/android/sdk/cmdline-tools/latest/bin/:$PATH"
-com
+# android sdk version path
+#export PATH="$OPT_DIR/android/sdk/current/bin:$PATH"
+#export PATH="$OPT_DIR/android/sdk/platform-tools/bin:$PATH"
+#export PATH="$OPT_DIR/android/sdk/cmdline-tools/latest/bin/:$PATH"
