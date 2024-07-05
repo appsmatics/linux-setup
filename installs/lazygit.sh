@@ -23,6 +23,7 @@ else
   cd $LAZYGIT_FOLDER
   echo ".. downloading lazygit $LAZYGIT_VERSION"
   curl -LO  $LAZYGIT_TAR_DOWNLOAD_LINK
+  echo "..extracting lazygit tar file..."
   tar -xf lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz -C $LAZYGIT_X86_FOLDER
   echo ".. lazygit version $LAZYGIT_VERSION installed"
 fi

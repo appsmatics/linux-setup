@@ -16,7 +16,7 @@ else
  cd $CODE_DIR
  echo "...downloading vscode $CODE_VERSION"
  curl -Lo code-stable-v${CODE_VERSION}-x64.tar.xz $CODE_TAR_DOWNLOAD_LINK
- echo "...untaring vscode $CODE_VERSION"
+ echo "..extracting  vscode $CODE_VERSION tar file"
  tar -xf code-stable-v${CODE_VERSION}-x64.tar.xz
  mv VSCode-linux-x64 VSCode-${CODE_VERSION}-linux-x64
 fi

@@ -16,6 +16,7 @@ else
  cd $NODEJS_DIR
  echo "...downloading nodejs $NODEJS_VERSION"
  curl -LO  $NODEJS_TAR_DOWNLOAD_LINK
+ echo "extracting nodjs-{$NODEJS_VERSION} tar file..."
  tar -xf node-v${NODEJS_VERSION}-linux-x64.tar.xz
 fi
 
