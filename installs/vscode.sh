@@ -1,9 +1,9 @@
 ### vscode setup:
 ##### download vscode tar file(https://update.code.visualstudio.com/{version}/linux-x64/stable)
-OPT_DIR="$HOME/opt"
+DEST_DIR="$HOME/opt"
 CODE_VERSION="1.83.1"
 #cur_ver:"1.90.2"
-CODE_DIR="$OPT_DIR/vscode"
+CODE_DIR="$DEST_DIR/vscode"
 CODE_X64="VSCode-${CODE_VERSION}-linux-x64"
 CODE_FOLDER="$CODE_DIR/$CODE_X64"
 CODE_TAR_DOWNLOAD_LINK=https://update.code.visualstudio.com/${CODE_VERSION}/linux-x64/stable

@@ -8,8 +8,8 @@ sudo apt-get install git
 sudo apt-get install vim
       
 
-OPT_DIR="$HOME /opt"
+DEST_DIR="$HOME /opt"
 ### create opt directory
-mkdir -p $OPT_DIR
+mkdir -p $DEST_DIR
 
 

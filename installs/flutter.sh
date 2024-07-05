@@ -2,9 +2,9 @@
 ##### download flutter latest version tar file from flutter page (https://storage.googleapis.com/   flutter_infra_release/releases/stable/linux/flutter_linux_3.22.2-stable.tar.xz)
 
 ##### installing flutter
-OPT_DIR="$HOME/opt"
+DEST_DIR="$HOME/opt"
 FLUTTER_VERSION="3.22.2"
-FLUTTER_FOLDER="$OPT_DIR/flutter"
+FLUTTER_FOLDER="$DEST_DIR/flutter"
 FLUTTER_VERSION_FOLDER="$FLUTTER_FOLDER/flutter-$FLUTTER_VERSION"
 FLUTTER_TAR_DOWNLOAD_LINK="https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz"
 
@@ -39,8 +39,8 @@ cd
   
 ### android sdk setup: 
 echo "starting android sdk setup.."
-mkdir -p $OPT_DIR/android/sdk
-cd $OPT_DIR/android/sdk
+mkdir -p $DEST_DIR/android/sdk
+cd $DEST_DIR/android/sdk
 
 PLATFORM_TOOLS_VERSION="34.0.1"
 
@@ -114,7 +114,7 @@ echo "command line tools are ready..."
 apt install openjdk-17-jdk openjdk-17-jre
 sudo apt install openjdk-17-jdk openjdk-17-jre
 
-flutter config --android-sdk="$OPT_DIR/android/sdk"
+flutter config --android-sdk="$DEST_DIR/android/sdk"
 flutter doctor -v
 
 
@@ -134,6 +134,6 @@ echo "sdkmanager --licenses"
 
 ### important: setting env path for android setup
 # android sdk version path
-#export PATH="$OPT_DIR/android/sdk/current/bin:$PATH"
-#export PATH="$OPT_DIR/android/sdk/platform-tools/bin:$PATH"
-#export PATH="$OPT_DIR/android/sdk/cmdline-tools/latest/bin/:$PATH"
+#export PATH="$DEST_DIR/android/sdk/current/bin:$PATH"
+#export PATH="$DEST_DIR/android/sdk/platform-tools/bin:$PATH"
+#export PATH="$DEST_DIR/android/sdk/cmdline-tools/latest/bin/:$PATH"
