@@ -1,0 +1,25 @@
+#!/bin/bash
+
+NOW_UTC1=`date --utc`
+NOW_UTC2=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+NOW_SECS_EPOCH=`date +%s`
+NOW_MSECS_EPOCH=`date +%s%N | cut -b1-13`
+
+NOW_LOCAL0=`date`
+NOW_LOCAL1=`date -Is`
+NOW_LOCAL2=`date +%Y-%m-%d_%H:%M:%S`
+NOW_LOCAL3=`date +%Y-%m-%d_%H%M%S`
+NOW_LOCAL4=`date +%Y%m%d_%H%M%S`
+
+echo "##### UTC #####"
+echo "$NOW_UTC1"
+echo "$NOW_UTC2"
+echo "$NOW_SECS_EPOCH (secs since 1970-01-01 UTC)"
+echo "$NOW_MSECS_EPOCH (msecs since 1970-01-01 UTC)"
+echo
+echo "##### LOCAL #####"
+echo "$NOW_LOCAL0"
+echo "$NOW_LOCAL1"
+echo "$NOW_LOCAL2"
+echo "$NOW_LOCAL3"
+echo "$NOW_LOCAL4"

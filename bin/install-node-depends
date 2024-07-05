@@ -1,0 +1,36 @@
+# yarn
+npm install --location=global yarn
+npm install --location=global npm-check-updates
+#npm install --location=global degit
+
+# simple http-server and file browser
+npm install --location=global http-server
+
+# serve a json file for a quick-n-dirty backend
+npm install --location=global json-server 
+
+# for shell scripting
+npm install --location=global shelljs
+
+#npm install --location=global jest
+#npm install --location=global mocha
+
+#npm install --location=global typescript
+#npm install --location=global nativescript
+
+
+# Git Peek quick view of repo
+#npm install --location=global @jarred/git-peek
+
+#=======================
+#npm install --location=global gulp
+#npm install --location=global bower
+
+# vue-cli
+#npm install --location=global vue-cli
+
+#create react
+#npm install --location=global create-react-app
+
+#optional to try polymer
+#npm install --location=global polymer-cli

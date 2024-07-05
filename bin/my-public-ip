@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Alternate endpoint https://icanhazip.com/
+
+# invoked without option just print external ip
+if [ $# == 0 ]; then
+  myip="$(curl -s https://ipinfo.io/ip)"
+  echo "${myip}"
+  exit 1
+fi
+
+# invoke with -v option
+myip="$(curl -s https://ipinfo.io/ip)"
+now=`date +%Y-%m-%d_%H:%M:%S`
+echo "${now}"
+echo "Public IP Address: ${myip}"
+
+#internal ip addresses
+echo "Internal IP Address: " `hostname -I`
