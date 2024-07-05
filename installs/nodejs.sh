@@ -30,3 +30,27 @@ fi
 ln -s node-v${NODEJS_VERSION}-linux-x64 current
 echo ".. nodejs $NODEJS_VERSION  .. current symlink updated"
 
+
+echo ".. installing some node modules globally"
+# yarn
+
+echo ".. installing yarn"
+./current/bin/npm install --silent --location=global yarn
+
+echo ".. installing npm-check-updates"
+./current/bin/npm install --silent --location=global npm-check-updates
+
+echo ".. installing degit"
+./current/bin/npm install --silent --location=global degit
+
+# simple http-server and file browser
+echo ".. installing http-server"
+./current/bin/npm install --silent --location=global http-server
+
+# serve a json file for a quick-n-dirty backend
+echo ".. installing json-server"
+./current/bin/npm install --silent --location=global json-server 
+
+# for shell scripting
+echo ".. installing shelljs"
+./current/bin/npm install --silent --location=global shelljs
