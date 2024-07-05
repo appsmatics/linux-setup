@@ -34,3 +34,7 @@ alias vimy="/usr/bin/vim -y"
 
 #sqlite with uparrow
 alias sqlite3="rlwrap -c sqlite3"
+
+# useful curl aliases (https://news.ycombinator.com/item?id=40869458)
+# alias wcurl="curl -# -O $1"
+# alias wcurl = curl -# -O $1 --location --remote-name --remote-time --retry 10 --retry-max-time 10 --continue-at -"
