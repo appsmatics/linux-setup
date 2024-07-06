@@ -2,8 +2,8 @@
 ##### download flutter latest version tar file from flutter page (https://storage.googleapis.com/   flutter_infra_release/releases/stable/linux/flutter_linux_3.22.2-stable.tar.xz)
 
 ##### installing flutter
-DEST_DIR="$HOME/opt"
 FLUTTER_VERSION="3.22.2"
+DEST_DIR="${DEST_DIR:-"$HOME/opt"}"
 FLUTTER_FOLDER="$DEST_DIR/flutter"
 FLUTTER_VERSION_FOLDER="$FLUTTER_FOLDER/flutter-$FLUTTER_VERSION"
 FLUTTER_TAR_DOWNLOAD_LINK="https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz"

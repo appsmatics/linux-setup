@@ -1,7 +1,7 @@
 ### oraclejdk setup:
 ##### download oraclejdk tar file(https://download.oracle.com/java/17/archive/jdk-17_linux-x64_bin.tar.gz)
-DEST_DIR="$HOME/opt"
 ORACLE_JDK_VERSION="17"
+DEST_DIR="${DEST_DIR:-"$HOME/opt"}"
 ORACLE_JDK_FOLDER="$DEST_DIR/oraclejdk"
 ORACLE_JDK_X64="jdk-$ORACLE_JDK_VERSION"
 ORACLE_JDK_VERSION_FOLDER="$ORACLE_JDK_FOLDER/$ORACLE_JDK_X64"

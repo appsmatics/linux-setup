@@ -1,5 +1,5 @@
 ### installing zoom
-DEST_DIR="$HOME/opt"
+DEST_DIR="${DEST_DIR:-"$HOME/opt"}"
 
 ZOOM_FOLDER="$DEST_DIR/zoom"
 apt --fix-broken install

@@ -1,7 +1,7 @@
 ### nodejs setup:
 ##### download nodejs tar file(https://nodejs.org/dist/v${NODEJS_VERSION}/node-v${NODEJS_VERSION}-linux-x64.tar.xz)
-DEST_DIR="$HOME/opt"
 NODEJS_VERSION="18.17.1"
+DEST_DIR="${DEST_DIR:-"$HOME/opt"}"
 #cur_ver:"18.17.1"
 NODEJS_DIR="$DEST_DIR/nodejs"
 NODEJS_X64="node-v${NODEJS_VERSION}-linux-x64"
