@@ -4,6 +4,11 @@
 
 HISTDIR="$HOME/.history"
 
+if [[ ! -d $HISTDIR ]]; then
+	echo ".. creating histdir $HISTDIR"
+	mkdir -p $HISTDIR
+fi
+
 GT_NAME=""
 
 if [ -z "$1" ]; then
