@@ -1,10 +1,9 @@
 ### lazygit setup:
 ##### Download the required version from https://github.com/jesseduffield/lazygit/releases
-
-DEST_DIR="$HOME/opt"
-
 ##### installing lazygit
 LAZYGIT_VERSION="0.42.0"
+DEST_DIR="${DEST_DIR:-"$HOME/opt"}"
+echo "printing dest dir $DEST_DIR"
 
 LAZYGIT_X86="lazygit_${LAZYGIT_VERSION}_Linux_x86_64"
 LAZYGIT_TAR_DOWNLOAD_LINK="https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
@@ -29,7 +28,7 @@ else
 fi
 
 # Always update the current symlink
-echo ".. resettting current symlink"
+echo ".. resetting current symlink"
 cd "$DEST_DIR/lazygit"
 if [[ -d "current" ]]
 then
