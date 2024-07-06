@@ -17,7 +17,7 @@ else
   mkdir  -p "$FLUTTER_FOLDER" 
   cd $FLUTTER_FOLDER
   echo "downloading flutter $FLUTTER_VERSION"
-  #curl -LO  $FLUTTER_TAR_DOWNLOAD_LINK
+  curl -LO  $FLUTTER_TAR_DOWNLOAD_LINK
   echo "installing flutter $FLUTTER_VERSION"
   echo "untaring the file started..."
   echo "extracting flutter-${FLUTTER_VERSION} tar file..."
