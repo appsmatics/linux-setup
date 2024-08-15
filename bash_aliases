@@ -29,12 +29,16 @@ alias egrep="egrep ${COLOR}"
 
 alias vi="/usr/bin/vim"
 
-#Easy Vim mode !
+# Easy Vim mode !
 alias vimy="/usr/bin/vim -y"
 
-#sqlite with uparrow
+# sqlite with uparrow
 alias sqlite3="rlwrap -c sqlite3"
 
 # useful curl aliases (https://news.ycombinator.com/item?id=40869458)
 # alias wcurl="curl -# -O $1"
 # alias wcurl = curl -# -O $1 --location --remote-name --remote-time --retry 10 --retry-max-time 10 --continue-at -"
+
+# git log
+alias glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
