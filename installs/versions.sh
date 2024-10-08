@@ -14,11 +14,13 @@ DEST_DIR="/opt2"
 
 
 # Flutter 
-FLUTTER_VERSION="42"
-ANDROID_VERSION="500"
+FLUTTER_VERSION="3.24.3"
+ANDROID_VERSION="34"
 BUILD_TOOLS_VERSION="34.0.0"
 
 
 CMDLINE_TOOLS_URL="https://dl.google.com/android/repository/commandlinetools-${REQUIRED_OS}-11076708_latest.zip"
+
+CMDLINE_TOOLS_ZIP=commandlinetools-${REQUIRED_OS}-11076708_latest.zip
 
 set +a

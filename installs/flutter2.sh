@@ -5,7 +5,7 @@ DEST_DIR="${DEST_DIR:-"$HOME/opt"}"
 echo "Flutter version = $FLUTTER_VERSION"
 echo "Android version = $ANDROID_VERSION"
 
-exit 1
+
 
 
 #PLATFORM_TOOLS_VERSION="34.0.1"
@@ -18,6 +18,7 @@ echo "FLUTTER_VERSION=$FLUTTER_VERSION"
 echo "DEST_DIR=$DEST_DIR"
 #echo "PLATFORM_TOOLS_VERSION=$PLATFORM_TOOLS_VERSION"
 #echo "TOOLS_VERSION=$TOOLS_VERSION"
+
 
 FLUTTER_FOLDER="$DEST_DIR/flutter"
 FLUTTER_VERSION_FOLDER="$FLUTTER_FOLDER/flutter-$FLUTTER_VERSION"
@@ -93,13 +94,13 @@ fi
 #commandlinetools download link:https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
 #cd opt/android/sdk
 echo "latest command line tools are downloading..."
-if [[ -a "commandlinetools-${REQUIRED_OS}-11076708_latest.zip" ]]
+if [[ -a $CMDLINE_TOOLS_ZIP ]]
 then
   echo "commandlinetools version latest version already exists..skipping"
 else
-curl -LO "https://dl.google.com/android/repository/commandlinetools-${REQUIRED_OS}-11076708_latest.zip"
+curl -LO $CMDLINE_TOOLS_URL
 echo "unzipping the commandline tools..."
-unzip  commandlinetools-${REQUIRED_OS}-11076708_latest.zip 
+unzip  $CMDLINE_TOOLS_ZIP 
 cd cmdline-tools/
 mkdir latest 
 mv -i * latest
