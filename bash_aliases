@@ -26,8 +26,8 @@ alias grep="grep ${COLOR}"
 alias fgrep="fgrep ${COLOR}"
 alias egrep="egrep ${COLOR}"
 
-#alias ls='ls -Av --time-style="+%Y-%h-%d %r" --group-directories-first --color'
-#alias ll='ls -lh'
+alias ls2='ls -Av --time-style="+%Y-%h-%d %r" --group-directories-first --color'
+alias ll2='ls -lh'
 
 alias vi="/usr/bin/vim"
 
@@ -36,6 +36,9 @@ alias vimy="/usr/bin/vim -y"
 
 # sqlite with uparrow
 alias sqlite3="rlwrap -c sqlite3"
+
+alias path="sed 's/:/\n/g' <<< $PATH"
+
 
 # useful curl aliases (https://news.ycombinator.com/item?id=40869458)
 # alias wcurl="curl -# -O $1"
