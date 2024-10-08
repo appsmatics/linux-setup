@@ -74,20 +74,41 @@ echo "flutter $FLUTTER_VERSION  .. current symlink updated"
 pwd
 cd
 
+# java jdk setup:
+echo "starting java jdk setup.."
+mkdir -p $DEST_DIR/java
+cd $DEST_DIR/java
+
+JAVA_JDK_FOLDER="$DEST_DIR/java/jdk-$JAVA_JDK_VERSION.jdk"
+
+# download the required java jdk version 
+if [[ -a "jdk-${JAVA_JDK_TAR_VERSION}.jdk" ]]
+then
+  echo "java jdk version $JAVA_JDK_VERSION already exists..skipping"
+else
+echo "downloading java jdk- $JAVA_JDK_VERSION.."
+curl -LO $JAVA_JDK_URL
+echo "untaring java jdk- $JAVA_JDK_VERSION tar file..."
+tar -xf $JAVA_JDK_TAR_FILE
+fi
+
+
+# Always update the current symlink
+echo ".. resetting current symlink for java"
+cd "$DEST_DIR/java"
+if [[ -d "current" ]]
+then
+  rm current
+fi
+ln -s jdk-${JAVA_JDK_TAR_VERSION}.jdk current
+echo ".. java jdk $JAVA_JDK_VERSION  .. current symlink updated"
+
 # android sdk setup: 
 echo "starting android sdk setup.."
 mkdir -p $DEST_DIR/android/sdk
 cd $DEST_DIR/android/sdk
 pwd
 
-REQUIRED_OS=""
-
-if [ $OS = "Darwin" ]
-then
-  REQUIRED_OS=mac
-else
- REQUIRED_OS=linux
-fi
 
 ### commandlinetools download and installation:(cmdline-tools component is missing fix)
 #ref link:https://linuxopsys.com/install-android-sdk-without-android-studio-on-ubuntu
