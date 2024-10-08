@@ -26,6 +26,8 @@ alias grep="grep ${COLOR}"
 alias fgrep="fgrep ${COLOR}"
 alias egrep="egrep ${COLOR}"
 
+#alias ls='ls -Av --time-style="+%Y-%h-%d %r" --group-directories-first --color'
+#alias ll='ls -lh'
 
 alias vi="/usr/bin/vim"
 
@@ -41,4 +43,5 @@ alias sqlite3="rlwrap -c sqlite3"
 
 # git log
 alias glg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 
