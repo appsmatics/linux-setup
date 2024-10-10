@@ -1,6 +1,6 @@
 ### vscode setup:
 ##### download vscode tar file(https://update.code.visualstudio.com/{version}/linux-x64/stable)
-CODE_VERSION="1.91.1"
+CODE_VERSION="1.94.1"
 DEST_DIR="${DEST_DIR:-"$HOME/opt"}"
 #cur_ver:"1.90.2"
 CODE_DIR="$DEST_DIR/vscode"
