@@ -14,6 +14,8 @@
 #TOOLS_VERSION="25.2.3"
 #MIN_REQUIRED_JDK_VERSION= 18
 
+source "$(dirname $0)/versions.sh"
+
 # Java jdk availble check
 # Check if JAVA_HOME is set
 if [ -z "$JAVA_HOME" ]; then
@@ -24,15 +26,15 @@ else
     echo "JAVA_HOME is set to: $JAVA_HOME"
 
     # Check if the java executable exists in JAVA_HOME
-    if [ -x "$JAVA_HOME/bin/java" ]; then
+    if [[ -x "$JAVA_HOME/bin/java" ]]; then
         echo "Java executable found in JAVA_HOME."
 
         # Check the Java version
         JAVA_VERSION=$(java -version 2>&1 | grep -i version | cut -d'"' -f2 | cut -d'.' -f1-1)
         echo "Java version: $JAVA_VERSION" 
 
-        if [ "$JAVA_VERSION" -ge $MIN_REQUIRED_JDK_VERSION ]; then
-            echo "Java version is greater than or equal to $MIN_REQUIRED_JDK_VERSION."
+        if [[ "$JAVA_VERSION" -ge "$MIN_REQUIRED_JDK_VERSION" ]]; then
+            echo "Java version is greater than or equal to $MIN_REQUIRED_JDK_VERSION"
             printf 'required Java version available Continue ? '; read answer
         else
             echo "Java version is less than $MIN_REQUIRED_JDK_VERSION"
