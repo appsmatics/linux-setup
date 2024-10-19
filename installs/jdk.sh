@@ -4,8 +4,9 @@
 
 echo "starting java jdk setup.."
 echo "sourcing versions"
-source ./versions.sh
+source "$(dirname $0)/versions.sh"
 
+echo "jdk tar version $JAVA_JDK_TAR_VERSION"
 
 mkdir -p $DEST_DIR/java
 cd $DEST_DIR/java
