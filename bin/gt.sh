@@ -2,7 +2,7 @@
 # Start a gnome-termianl with a named history file
 # pass the terminal name as arg to this script
 
-HISTDIR="$HOME/.history"
+HISTDIR="$HOME/.histories"
 
 if [[ ! -d $HISTDIR ]]; then
 	echo ".. creating histdir $HISTDIR"
@@ -33,7 +33,7 @@ export HISTFILE="$HISTDIR/$GT_NAME"
 export HISTCONTROL=erasedups:ignoreboth
 export HISTSIZE=2000
 export HISTFILESIZE=3000
-export HISTIGNORE="ls:ll:lla:lal:h:cl:clear:cd:pwd:gt.sh"
+export HISTIGNORE="ls:ll:lla:lal:h:cl:clear:cd:pwd:gt.sh:*AWS_*"
 
 # https://unix.stackexchange.com/a/18443
 shopt -s histappend
