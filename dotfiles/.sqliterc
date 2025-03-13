@@ -1,3 +1,5 @@
-
+-- 
 .headers ON
-.mode columns
+.mode column
+.width auto
+.nullvalue NULL
