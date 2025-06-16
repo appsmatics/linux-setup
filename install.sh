@@ -1,6 +1,7 @@
 #!/bin/bash
 
-OPT_DIR="$HOME/opt"
+# create this and set chown to user
+OPT_DIR="/opt3"
 
 ### create opt/bin directory
 mkdir -vp $OPT_DIR/bin
